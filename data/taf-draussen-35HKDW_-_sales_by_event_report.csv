@@ -1,0 +1,4 @@
+Listing ID,Listing start date,Listing start time,Listing timezone,Listing name,Number of paid tickets sold,Number of free tickets sold,Number of total tickets sold,Number of add-ons sold,Total ticket face value,Total ticket discounts,Total ticket face value less discounts,Total add-on face value,Earnings from extra charges,Facility fees,Total taxes collected,"Universe service charge, included in price","Taxes on Universe service charge, included in price",Your net sales,Currency
+65ae7fc4d77ba6002bb9a6d5,2024-07-12,15:00:00,Europe/Berlin,TAF & DRAUSSEN,477,156,633,0,10297.95,0.00,10297.95,0,0.00,0.00,0.00,770.33,144.68,9382.94,EUR
+672238dd6589c80d0deaac38,2025-06-27,08:00:00,Europe/Berlin,TAF & DRAUSSEN,534,162,696,0,11427.00,0.00,11427.00,0,0.00,0.00,0.00,857.58,161.72,10407.70,EUR
+68f654f423111b0024cc0fdb,2026-06-05,18:00:00,Europe/Berlin,TAF & DRAUSSEN,388,105,493,0,7386.00,0.00,7386.00,0,0.00,0.00,0.00,586.44,110.04,6689.52,EUR
