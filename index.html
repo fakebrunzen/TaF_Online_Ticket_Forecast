@@ -91,25 +91,13 @@ footer{text-align:center;font-size:11px;color:#888;padding-top:1rem;border-top:0
     <span><span class="legend-dot" style="background:#EF9F27"></span>2026 – VVK aktiv (noch 4 Wochen)</span>
   </div>
   <div class="chart-wrap" style="height:280px"><canvas id="cumChart"></canvas></div>
-  <div class="charts-row">
-    <div>
-      <div class="section-title">Ticket-Mix nach Kategorie</div>
-      <div class="legend">
-        <span><span class="legend-dot" style="background:#378ADD"></span>Erwachsene</span>
-        <span><span class="legend-dot" style="background:#1D9E75"></span>Jugendliche</span>
-        <span><span class="legend-dot" style="background:#EF9F27"></span>Kinder</span>
-      </div>
-      <div class="chart-wrap" style="height:200px"><canvas id="mixChart"></canvas></div>
-    </div>
-    <div>
-      <div class="section-title">Early Bird vs. Regulär</div>
-      <div class="legend">
-        <span><span class="legend-dot" style="background:#534AB7"></span>Early Bird / Aktionen</span>
-        <span><span class="legend-dot" style="background:#B4B2A9"></span>Regulär</span>
-      </div>
-      <div class="chart-wrap" style="height:200px"><canvas id="ebChart"></canvas></div>
-    </div>
+
+  <div class="section-title">Early Bird vs. Regulär</div>
+  <div class="legend">
+    <span><span class="legend-dot" style="background:#534AB7"></span>Early Bird / Aktionen</span>
+    <span><span class="legend-dot" style="background:#B4B2A9"></span>Regulär</span>
   </div>
+  <div class="chart-wrap" style="height:180px"><canvas id="ebChart"></canvas></div>
   <div class="section-title">Insights</div>
   <div class="insight-grid">
     <div class="insight-card pos">
@@ -137,15 +125,11 @@ const labels=["33", "32", "31", "30", "29", "28", "27", "26", "25", "24", "23", 
 const cum24=[null, null, null, null, null, null, null, null, null, null, 10, 11, 23, 30, 36, 50, 76, 85, 211, 311, 337, 353, 356, 356, 360, 364, 391, 418, 437, 452, 474, 478, 517, 600];
 const cum25=[null, 35, 57, 71, 97, 99, 126, 133, 189, 189, 189, 189, 191, 194, 195, 199, 200, 218, 228, 228, 235, 280, 337, 373, 400, 413, 418, 425, 437, 458, 468, 519, 545, 658];
 const cum26=[null, null, null, null, null, 88, 141, 165, 195, 211, 224, 238, 242, 251, 266, 288, 297, 325, 340, 384, 397, 413, 421, 428, 430, 439, 446, 462, 473, 493, null, null, null, null];
-const m24=[405, 41, 154];
-const m25=[461, 73, 162];
-const m26=[317, 71, 105];
 const b24=[158, 442];
 const b25=[254, 442];
 const b26=[301, 192];
 const g='rgba(0,0,0,0.06)',t='#888';
 new Chart(document.getElementById('cumChart'),{type:'line',data:{labels,datasets:[{label:'2024',data:cum24,borderColor:'#378ADD',backgroundColor:'rgba(55,138,221,0.08)',tension:.3,pointRadius:2,borderWidth:2,spanGaps:false},{label:'2025',data:cum25,borderColor:'#1D9E75',backgroundColor:'rgba(29,158,117,0.08)',tension:.3,pointRadius:2,borderWidth:2,spanGaps:false},{label:'2026',data:cum26,borderColor:'#EF9F27',backgroundColor:'rgba(239,159,39,0.1)',tension:.3,pointRadius:3,borderWidth:2.5,borderDash:[5,3],spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false,callbacks:{label:(c)=>c.raw!=null?`${c.dataset.label}: ${c.raw} Tickets`:`${c.dataset.label}: -`}}},scales:{x:{grid:{color:g},ticks:{color:t,font:{size:11},maxTicksLimit:12},title:{display:true,text:'Wochen vor Event',color:t,font:{size:11}}},y:{beginAtZero:true,grid:{color:g},ticks:{color:t,font:{size:11}},title:{display:true,text:'Kumulierte Tickets',color:t,font:{size:11}}}}}});
-new Chart(document.getElementById('mixChart'),{type:'bar',data:{labels:['2024','2025','2026'],datasets:[{label:'Erwachsene',data:m24,backgroundColor:'#378ADD'},{label:'Jugendliche',data:m25,backgroundColor:'#1D9E75'},{label:'Kinder',data:m26,backgroundColor:'#EF9F27'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{color:g},ticks:{color:t,font:{size:11}}},y:{stacked:true,beginAtZero:true,grid:{color:g},ticks:{color:t,font:{size:11}}}}}});
 new Chart(document.getElementById('ebChart'),{type:'bar',data:{labels:['2024','2025','2026'],datasets:[{label:'Early Bird',data:[b24[0],b25[0],b26[0]],backgroundColor:'#534AB7'},{label:'Regulaer',data:[b24[1],b25[1],b26[1]],backgroundColor:'#B4B2A9'}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{color:g},ticks:{color:t,font:{size:11}}},y:{stacked:true,grid:{display:false},ticks:{color:t,font:{size:11}}}}}});
 </script>
 </body>
